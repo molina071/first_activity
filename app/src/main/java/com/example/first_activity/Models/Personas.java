@@ -9,7 +9,6 @@ public class Personas {
     private Integer edades;
     private String correos;
 
-
     public Personas() {
 
     }

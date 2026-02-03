@@ -14,12 +14,13 @@ public class SQLiteConexion extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onCreate(SQLiteDatabase db) {
-
+    public void onCreate(SQLiteDatabase db ) {
+        db.execSQL(transacciones.createTablePerson);
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-
+        db.execSQL(transacciones.dropTablePerson);
+        onCreate(db); //rename reference.
     }
 }

@@ -4,8 +4,10 @@ public class transacciones {
 
     //DB NAME
     public static final String dbName = "DBPM01";
+
+    public static final int version = 1;
    //table
-    public static final String tbPerons = "personas";
+    public static final String tbPersons = "tbPersons";
     //tb persons field
     public static final  String id = "id";
     public static final  String nombre = "nombre";
@@ -14,12 +16,21 @@ public class transacciones {
     public static final  String correo = "correo";
     public static  final  String foto = "foto";
 
-    public static final String createTablePerson = "CREATE TABLE"+ tbPerons + " ( " +
+    //DDL es una sintaxis utilizada para crear, modificar y eliminar objetos.
 
-            id + "INTEGER PRYMARY KEY AUTOINCREMENT, " +
-            nombre + "TEXT, " +
-            apellido + "TEXT, " +
-            edad + "TEXT, " +
-            correo + "TEXT" +
-            foto +"TEXT)";
+    //DDL CREATE
+    public static final String createTablePerson = "CREATE TABLE " + tbPersons + " ( " +
+
+            id + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            nombre + " TEXT, " +
+            apellido + " TEXT, " +
+            edad + " TEXT, " +
+            correo + " TEXT " +
+            foto +" TEXT);";
+
+    //DDL DROP
+    public static final String dropTablePerson = "DROP TABLE IF Exist   " + tbPersons;
+
+    public static final String selectTablePerson = " SELECT * FROM " + tbPersons;
+
 }
