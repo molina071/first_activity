@@ -3,4 +3,5 @@
     <string name="nombre">nombre</string>
     <string name="apellido">apellido</string>
     <string name="agregar">agregar</string>
+    <string name="Guardar">Guardar</string>
 </resources>
