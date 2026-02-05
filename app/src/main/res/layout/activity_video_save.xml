@@ -31,6 +31,8 @@
 
 
 
+
+
     ]]>
 
     <TextView
@@ -39,6 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
+        android:layout_marginTop="116dp"
         android:layout_marginEnd="15dp"
         android:gravity="center"
         android:text="Presiona el icono y empieza a grabar"
@@ -47,13 +50,15 @@
         android:typeface="monospace"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="126dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imgGrabar"
-        android:layout_width="261dp"
-        android:layout_height="219dp"
-        app:srcCompat="@android:drawable/presence_video_busy"
-        tools:layout_editor_absoluteX="75dp"
-        tools:layout_editor_absoluteY="306dp" />
+        android:layout_width="237dp"
+        android:layout_height="202dp"
+        android:layout_marginTop="96dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/texto_grabar"
+        app:srcCompat="@android:drawable/presence_video_busy" />
 </androidx.constraintlayout.widget.ConstraintLayout>
