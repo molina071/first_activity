@@ -1,6 +1,7 @@
 package com.example.first_activity
 
 import android.Manifest
+import android.content.ContentValues
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -14,6 +15,10 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
+import android.net.Uri
+import android.util.Log.e
+import java.io.OutputStream
+
 
 class Activity_photo_save : AppCompatActivity() {
 
@@ -85,12 +90,34 @@ class Activity_photo_save : AppCompatActivity() {
 
             val foto_guar = findViewById<View?>(R.id.foto) as ImageView
             foto_guar.setImageBitmap(img)
+
+            saveImg(img!!)
         }
     }
 
-    private fun saveImg(){
+    //por aqui me quede.
+    private fun saveImg(img: Bitmap) {
+        // Metadatos de la imagen
+        val values = ContentValues()
+        values.put(MediaStore.Images.Media.TITLE, "Casa Verde")
+        values.put(MediaStore.Images.Media.DESCRIPTION, "Foto tomada desde la app")
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/png")
 
+        val uri: Uri? = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values)
+
+        try {
+            uri?.let {
+                val outputStream = contentResolver.openOutputStream(it)
+                outputStream?.let { stream ->
+                    img.compress(Bitmap.CompressFormat.PNG, 100, stream)
+                    stream.close()
+                }
+                    Toast.makeText(this, "Imagen guardada en galería", Toast.LENGTH_SHORT).show()
+        }
+    }catch (e : Exception) {
+            e.printStackTrace()
+            Toast.makeText(this, "Error al guardar en galería", Toast.LENGTH_SHORT).show()
+        }
     }
-
 
 }

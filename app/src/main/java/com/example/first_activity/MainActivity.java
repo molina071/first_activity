@@ -113,6 +113,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+
+
     private void addPerson() {
 
         try{
@@ -147,4 +149,7 @@ public class MainActivity extends AppCompatActivity {
 
         nombres.requestFocus();
     }
+
+
+
 }
