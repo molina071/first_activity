@@ -21,7 +21,6 @@ import java.io.OutputStream
 
 
 class Activity_photo_save : AppCompatActivity() {
-
     var foto_guardar: ImageView? = null
     //var btn_guardar: Button? = null
 

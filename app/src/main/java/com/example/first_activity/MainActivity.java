@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     Button btn_agregar, btn_foto;
 
         static final int REQUEST_CAMERA_PERMISSION = 230;
-            static final int REQUEST_IMAGE_CAPTURE = 191;
+        static final int REQUEST_IMAGE_CAPTURE = 191;
 
 
 
@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         btn_agregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getApplicationContext(), "Hola", Toast.LENGTH_LONG).show();
                 addPerson();
                 clearEditText();
             }
@@ -113,8 +112,6 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-
-
     private void addPerson() {
 
         try{
@@ -137,9 +134,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Ah ocurrido un error" + e.getMessage().toString(),
                     Toast.LENGTH_LONG).show();
         }
-
     }
-
     private void clearEditText() {
 
         nombres.setText("");
